@@ -2,9 +2,9 @@
 echo "Begin testing ..."
 
 list=`ls ./src`
+list_ref=`echo -e 'a.txt\nb\nc.c\n'`
 
-
-if [ $list !="a.txt b c.c" ]
+if [ "$list" != "$list_ref" ]
 then
     echo "Number of files is wrong "
 else
@@ -12,7 +12,7 @@ else
     
     for file in $list
     do
-        cat ./src/$file > contain
+        contain=`cat ./src/$file`
         if [ -f "./src/a.txt" ] && [ "$contain"="Welcome" ] 
         then
             echo "File a.txt is correct!"
