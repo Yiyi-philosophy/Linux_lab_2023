@@ -1,7 +1,9 @@
 #!/bin/bash
 echo "Begin testing ..."
 
-list=`ls ./src`
+list=`ls ./src` # a b c should pass
+# list=`ls ./src_2` b has problem
+# list=`ls ./src_2` c.c has problem
 list_ref=`echo -e 'a.txt\nb\nc.c\n'`
 flag1=0
 flag2=0
