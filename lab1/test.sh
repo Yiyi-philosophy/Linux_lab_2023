@@ -15,50 +15,47 @@ else
     
     for file in $list
     do
-        contain=`cat ./src/$file`
-        if [ -f "./src/a.txt" ] && [ "$contain"="Welcome" ] 
+        if "$file" = "a.txt"
         then
-            echo $contain
-            echo "File a.txt is correct!"
-            flag1=1
-            break
-        else
-            echo "File a.txt is wrong!"
-            break
-        fi
-    done
+            contain1=`cat ./src/$file`
+            if "$contain1" = "Welcome"
+            then
+                echo "File a.txt is correct!"
+                flag1=1
+                break
+            else
+                echo "File a.txt is wrong!"
+                break 
+            fi  
 
-    unset contain
+        elif "$file" = "b"
+        then
+            contain2=`cat ./src/$file`
+            if "$contain2" == 'to'
+            then
+                echo "File b is correct!"
+                flag2=1
+                break
+            else
+                echo "File b is wrong!"
+                break 
+            fi 
 
-    for file in $list
-    do
-        contain=`cat ./src/$file`
-        echo $contain
-        if [ -f "./src/b" ] && [ "$contain"='to' ] 
+        elif "$file" = "c.c"
         then
-            echo $contain
-            echo "File b is correct!"
-            flag2=1
-            break
+            contain3=`cat ./src/$file`
+            if "$contain3" = 'Linux 2023'
+            then
+                echo "File c.c is correct!"
+                flag3=1
+                break
+            else
+                echo "File c.c is wrong!"
+                break
+            fi
+
         else
-            echo "File b is wrong!"
-            break   
-        fi
-    done
-    
-    unset contain
-    for file in $list
-    do
-        contain=`cat ./src/$file`
-        if [ -f "./src/c.c" ] && [ "$contain"="Linux 2023" ] 
-        then
-            echo $contain
-            echo "File c.c is correct!"
-            flag3=1
-            break
-        else
-            echo "File c.c is wrong!"
-            break
+            continue
         fi
     done
 fi
