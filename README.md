@@ -13,12 +13,17 @@ Copy `a.txt` `b` `c.c` files from `org` to `src .`
 We hope that file in `src` is like this:
 
 - `a.txt`
+
   - Content: "Welcome"
 - `b`
+
   - Content: "to"
 - `c`
+
   - Content: "Linux 2023"
 
 You can use `./test.sh` to vertify your answer.
+
+If you meet the problem "Permission Denied", use `chmod 755 test.sh` .
 
 ![1678930749732](image/1678930749732.png)
