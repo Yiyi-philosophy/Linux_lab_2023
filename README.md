@@ -1,6 +1,6 @@
 # Linux 2023 Lab
 
-Hello! This is our lab. Please download the code by 
+Hello! This is our lab. Please download the code by
 
 `git clone https://github.com/Yiyi-philosophy/Linux_lab_2023`
 
@@ -20,6 +20,5 @@ We hope that file in `src` is like this:
   - Content: "Linux 2023"
 
 You can use `./test.sh` to vertify your answer.
-
 
 ![1678930749732](image/1678930749732.png)
