@@ -17,7 +17,7 @@ else
     
     for file in $list
     do
-        if "$file" = "a.txt"
+        if "${file##*/}" = "a.txt"
         then
             contain1=`cat ./src/$file`
             if "$contain1" = "Welcome"
@@ -30,7 +30,7 @@ else
                 break 
             fi  
 
-        elif "$file" = "b"
+        elif "${file##*/}" = "b"
         then
             contain2=`cat ./src/$file`
             if "$contain2" == 'to'
