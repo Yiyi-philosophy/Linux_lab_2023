@@ -20,7 +20,8 @@ else
         if "${file##*/}" = "a.txt"
         then
             contain1=`cat ./src/$file`
-            if "$contain1" = "Welcome"
+            echo $contain1
+            if [ "$contain1" = "Welcome" ]
             then
                 echo "File a.txt is correct!"
                 flag1=1
@@ -30,10 +31,10 @@ else
                 break 
             fi  
 
-        elif "${file##*/}" = "b"
+        elif "$file" = "b"
         then
             contain2=`cat ./src/$file`
-            if "$contain2" == 'to'
+            if [ "$contain2" = 'to' ]
             then
                 echo "File b is correct!"
                 flag2=1
@@ -43,10 +44,10 @@ else
                 break 
             fi 
 
-        elif "$file" = "c.c"
+        elif [ "$file" = "c.c" ]
         then
             contain3=`cat ./src/$file`
-            if "$contain3" = 'Linux 2023'
+            if [ "$contain3" = 'Linux 2023']
             then
                 echo "File c.c is correct!"
                 flag3=1
